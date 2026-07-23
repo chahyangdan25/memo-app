@@ -64,7 +64,7 @@ function NoteForm({ onAdd }) {
   )
 }
 
-function NoteItem({ note, onUpdate, onDelete }) {
+function NoteItem({ note, onUpdate, onDelete, isOwner }) {
   const [editing, setEditing] = useState(false)
   const [content, setContent] = useState(note.content)
 
@@ -89,10 +89,12 @@ function NoteItem({ note, onUpdate, onDelete }) {
           <span className="note-date">
             {new Date(note.created_at).toLocaleString()}
           </span>
-          <div className="note-actions">
-            <button onClick={() => setEditing(true)}>수정</button>
-            <button onClick={() => onDelete(note.id)}>삭제</button>
-          </div>
+          {isOwner && (
+            <div className="note-actions">
+              <button onClick={() => setEditing(true)}>수정</button>
+              <button onClick={() => onDelete(note.id)}>삭제</button>
+            </div>
+          )}
         </>
       )}
     </li>
@@ -136,6 +138,7 @@ function NotesApp({ session, signOut }) {
                   note={note}
                   onUpdate={handleUpdate}
                   onDelete={handleDelete}
+                  isOwner={note.user_id === session.user.id}
                 />
               ))}
             </ul>
