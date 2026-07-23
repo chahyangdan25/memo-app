@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  background: #f2f2f2;
+  color: #212121;
+}
+
+.login-page {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+}
+
+.login-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 40px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(160deg, #f4b6ff 0%, #d9a8ff 30%, #ffd9a0 70%, #ffb98c 100%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.login-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-card-label {
+  font-size: 24px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.login-card h1 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.google-btn {
+  padding: 16px 24px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 16px;
+  background: rgba(64, 0, 96, 0.08);
+  backdrop-filter: blur(16px);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.google-btn:hover {
+  background: rgba(23, 0, 37, 0.216);
+}
+
+.notes-app {
+  max-width: 1280px;
+  width: 100%;
+  align-self: stretch;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.notes-app-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.notes-app-right {
+  position: sticky;
+  top: 40px;
+}
+
+.notes-app-left {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .notes-app-body {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-app-right {
+    position: static;
+  }
+}
+
+.app-header h1 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+  color: #93939f;
+}
+
+.user-info button {
+  padding: 8px 16px;
+  border: 1px solid #d9d9dd;
+  border-radius: 32px;
+  background: transparent;
+  color: #212121;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.user-info button:hover {
+  border-color: #17171c;
+}
+
+.note-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #eeece7;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.note-form textarea {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: #ffffff;
+  resize: none;
+  height: 176px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.note-form textarea:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.note-form button,
+.note-actions button {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 32px;
+  background: #17171c;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .note-form {
+    flex-direction: column;
+  }
+}
+
+.note-form button:hover,
+.note-actions button:hover {
+  background: #000000;
+}
+
+.note-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.note-list-empty {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+  border-radius: 22px;
+  background: #eeece7;
+  color: #93939f;
+  font-size: 16px;
+  text-align: center;
+  padding: 24px;
+}
+
+.note-item {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 22px;
+  border: 1px solid #f2f2f2;
+}
+
+.note-item p {
+  margin: 0 0 10px;
+  white-space: pre-wrap;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.note-date {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 12px;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  color: #93939f;
+}
+
+.note-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.note-actions button:last-child {
+  background: transparent;
+  color: #b30000;
+  border: 1px solid #d9d9dd;
+}
+
+.note-actions button:last-child:hover {
+  background: transparent;
+  border-color: #b30000;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 100px;
+  color: #93939f;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 14px;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+}
